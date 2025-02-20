@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf3tyweo1qfv7"]
+
+[ext_resource type="Texture2D" uid="uid://d27w5kgpmdami" path="res://assets/hudDialog/faceset-b.png" id="1_dql73"]
+[ext_resource type="Script" path="res://scenes/ui/dialog_screen.gd" id="1_ub485"]
+[ext_resource type="FontFile" uid="uid://cc2cusrly12wg" path="res://assets/hudDialog/font/EquipmentPro.woff" id="2_1wjtu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y624g"]
+line_spacing = 0.0
+font = ExtResource("2_1wjtu")
+
+[node name="DialogScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
+clip_contents = true
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -100.0
+offset_right = 160.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+script = ExtResource("1_ub485")
+_name = NodePath("Background/HContainer/VContainer/Name")
+_dialog = NodePath("Background/HContainer/VContainer/Dialog")
+_faceset = NodePath("Background/HContainer/Border/Faceset")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="HContainer" type="HBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(312, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -35.0
+offset_right = 156.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="ColorRect" parent="Background/HContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Faceset" type="TextureRect" parent="Background/HContainer/Border"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(70, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 35.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dql73")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VContainer" type="VBoxContainer" parent="Background/HContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="Background/HContainer/VContainer"]
+layout_mode = 2
+text = "Frouxa "
+label_settings = SubResource("LabelSettings_y624g")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialog" type="RichTextLabel" parent="Background/HContainer/VContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/table_v_separation = 1
+theme_override_constants/table_h_separation = 1
+theme_override_fonts/normal_font = ExtResource("2_1wjtu")
+text = "Texto"

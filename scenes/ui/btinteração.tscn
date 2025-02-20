@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://diovyf3h312g8"]
+
+[ext_resource type="Texture2D" uid="uid://ikjb2ddqf7fb" path="res://assets/imgs/buttoms/butao.png" id="1_v18is"]
+[ext_resource type="Texture2D" uid="uid://dcxvjcgy86vsu" path="res://assets/imgs/buttoms/nutao presed.png" id="2_td73k"]
+[ext_resource type="FontFile" uid="uid://cc2cusrly12wg" path="res://assets/hudDialog/font/EquipmentPro.woff" id="3_7dc4x"]
+
+[node name="btinteração" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(617, 315)
+texture_normal = ExtResource("1_v18is")
+texture_pressed = ExtResource("2_td73k")
+action = "interact"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 314.0
+offset_right = 675.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(0.572669, 1.1792e-06, 3.36915e-07, 1)
+theme_override_fonts/font = ExtResource("3_7dc4x")
+theme_override_font_sizes/font_size = 50
+text = "E"

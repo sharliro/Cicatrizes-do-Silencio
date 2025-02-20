@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://gcyedre3xr2r"]
+
+[ext_resource type="Script" path="res://scripts/savetela.gd" id="1_juopm"]
+[ext_resource type="Script" path="res://scenes/ui/SaveSystem.gd" id="2_4fg3k"]
+
+[node name="savetela" type="Control" groups=["Hud"]]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_juopm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -85.5
+offset_right = 182.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Save Slot 1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SLOT1
+"
+
+[node name="save02" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SLOT 2"
+
+[node name="save03" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SLOT 3"
+
+[node name="save04" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SLOT 4"
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR
+"
+
+[node name="SaveSystem" type="Node" parent="."]
+script = ExtResource("2_4fg3k")
+
+[connection signal="pressed" from="VBoxContainer/Save Slot 1" to="." method="_on_save_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/save02" to="." method="_on_save_02_pressed"]
+[connection signal="pressed" from="VBoxContainer/save03" to="." method="_on_save_03_pressed"]
+[connection signal="pressed" from="VBoxContainer/save04" to="." method="_on_save_04_pressed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]

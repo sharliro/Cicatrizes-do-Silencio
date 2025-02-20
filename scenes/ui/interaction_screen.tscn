@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://djp8iwpjv16et"]
+
+[ext_resource type="Script" path="res://scenes/ui/dialog_screen.gd" id="1_epnxx"]
+[ext_resource type="FontFile" uid="uid://cc2cusrly12wg" path="res://assets/hudDialog/font/EquipmentPro.woff" id="3_ltq5x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3pkfs"]
+font = ExtResource("3_ltq5x")
+
+[node name="DialogScreen" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -80.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+script = ExtResource("1_epnxx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 0.360784)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "Aperta E para interagir"
+label_settings = SubResource("LabelSettings_3pkfs")

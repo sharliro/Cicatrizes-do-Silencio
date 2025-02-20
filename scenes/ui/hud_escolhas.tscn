@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ioklc8hed4"]
+
+[ext_resource type="FontFile" uid="uid://cc2cusrly12wg" path="res://assets/hudDialog/font/EquipmentPro.woff" id="1_1kpgr"]
+
+[node name="ChooseOptionHud" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 219.0
+offset_right = -23.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 0.360784)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" groups=["Buttons"]]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -39.0
+offset_right = 327.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="OptionYes" type="Button" parent="ColorRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("1_1kpgr")
+text = "SIM
+"
+
+[node name="OptionNo" type="Button" parent="ColorRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1kpgr")
+text = "NÃO
+"

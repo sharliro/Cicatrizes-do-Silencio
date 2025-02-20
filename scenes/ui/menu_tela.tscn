@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://j5mrtowh65bl"]
+
+[ext_resource type="Texture2D" uid="uid://bla6ads47fjji" path="res://assets/IMGBG/BG TESTE.webp" id="1_8dn3q"]
+[ext_resource type="Script" path="res://scripts/main_screen.gd" id="1_g4lum"]
+[ext_resource type="FontFile" uid="uid://cc2cusrly12wg" path="res://assets/hudDialog/font/EquipmentPro.woff" id="3_mcyh3"]
+[ext_resource type="AudioStream" uid="uid://dgjbqe2xriki5" path="res://assets/audio/songTheme.mp3" id="3_qe1ym"]
+
+[node name="menu tela" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4lum")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 726.0
+texture = ExtResource("1_8dn3q")
+expand_mode = 2
+flip_h = true
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 421.0
+offset_right = 396.0
+offset_bottom = 522.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="INICIAR" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mcyh3")
+theme_override_font_sizes/font_size = 25
+text = "INICIAR
+"
+
+[node name="CONTINUAR" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mcyh3")
+theme_override_font_sizes/font_size = 25
+text = "CONTINUAR
+"
+
+[node name="FECHAR" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mcyh3")
+theme_override_font_sizes/font_size = 25
+text = "FECHAR
+"
+
+[node name="MUSICA FUNDO" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qe1ym")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/INICIAR" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/FECHAR" to="." method="_on_fechar_pressed"]

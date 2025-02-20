@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1puqx36wiuke"]
+
+[ext_resource type="Script" path="res://scripts/polygon_2d.gd" id="1_rbh8s"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+script = ExtResource("1_rbh8s")
