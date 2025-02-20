@@ -45,7 +45,7 @@ func find_interaction_dialog():
     var tree = get_tree()
     if not tree:
         return null
-
+                
     for node in tree.get_nodes_in_group("Hud"):
         if node is Control:
             return node.get_children().filter(func(child): 
